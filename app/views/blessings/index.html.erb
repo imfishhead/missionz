@@ -1,0 +1,5 @@
+<% @blessings.find_each do |blessing |%>
+  <%= blessing.nickname %><br>
+  <%= image_tag blessing.photo %><br>
+  <%= blessing.content %>
+<% end %>

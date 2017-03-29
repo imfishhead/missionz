@@ -1,0 +1,6 @@
+<%= simple_form_for @blessing do |f| %>
+	請上傳一張您的照片<%= f.file_field :photo %><br>
+	您是？<%= f.input_field :nickname %><br>
+	請留下祝福<%= f.input_field :content %><br>
+	<%= f.button :submit %>
+<% end %>

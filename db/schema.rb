@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20170327114438) do
   create_table "blessings", force: :cascade do |t|
     t.string   "photo"
     t.string   "nickname"
-    t.text     "blessing"
+    t.text     "content"
     t.string   "question"
     t.boolean  "solved",     default: false
     t.datetime "created_at",                 null: false
