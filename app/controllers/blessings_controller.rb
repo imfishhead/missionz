@@ -22,6 +22,7 @@ class BlessingsController < ApplicationController
 
 	def update
 		@blessing = Blessing.find(params[:id])
+		@blessing.update!(permit_params)
 		redirect_to @blessing
 	end
 
