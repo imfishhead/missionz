@@ -1,5 +1,7 @@
-<% @blessings.find_each do |blessing |%>
+<% if @blessings.find_each do |blessing |%>
   <%= blessing.nickname %><br>
   <%= image_tag blessing.photo %><br>
   <%= blessing.content %>
+<% end.empty? %>
+  你還沒解開任何一個祝福，太辜負貝殼人了吧！
 <% end %>
