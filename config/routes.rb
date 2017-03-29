@@ -6,10 +6,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'blessings#index'
 
+  get 'start_solve', to: 'blessings#start_solve', as: 'start_solve'
   resources :blessings do
     member do
       get 'add_question', to: 'blessings#add_question'
-      get 'solved', to: 'blessings#solved'
+      get 'unsolved', to: 'blessings#unsolved'
+      post 'solve', to: 'blessings#solve'
     end
   end
   # Example of regular route:

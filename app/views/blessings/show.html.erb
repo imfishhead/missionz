@@ -1,7 +1,3 @@
-<h3><%= "請問，#{@blessing.question}？" %></h3>
-<% @random_blessings.each do |blessing| %>
-  <%= image_tag blessing.photo %>
-  <%= blessing.nickname %><br>
-<% end %>
-
-<%= link_to '看目前解開的祝福', blessings_path %>
+<%= @blessing.nickname %><br>
+<%= image_tag @blessing.photo.url %><br>
+<%= @blessing.content %>

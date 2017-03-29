@@ -1,0 +1,11 @@
+<h3><%= "請問，#{@blessing.question}？" %></h3>
+<%= form_tag solve_blessing_path do %>
+	<% @random_blessings.each do |blessing| %>
+	  <%= image_tag blessing.photo %>
+	  <%= radio_button_tag 'answer_id', blessing.id %>
+	  <%= label_tag "answer_id_#{blessing.id}", blessing.nickname %>
+	<% end %>
+  <%= submit_tag '我覺得是他' %>
+<% end %>
+
+<%= link_to '看目前解開的祝福', blessings_path %>

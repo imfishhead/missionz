@@ -26,12 +26,7 @@ class BlessingsController < ApplicationController
 		redirect_to @blessing
 	end
 
-	def solved
-		@blessing = Blessing.find(params[:id])
-		redirect_to blessing_path(@blessing) unless @blessing.solved?
-	end
-
-	def show
+	def unsolved
 		@blessing = Blessing.find(params[:id])
 		if !@blessing.solved?
 			@random_blessings = Blessing.where
@@ -40,8 +35,34 @@ class BlessingsController < ApplicationController
 																	.take(3)
 			@random_blessings << @blessing
 		else
-			redirect_to solved_blessing_path(@blessing)
+			redirect_to @blessing
 		end
+	end
+
+	def start_solve
+		@blessing = Blessing.unsolved.first
+		if @blessing
+			redirect_to @blessing
+		else
+			redirect_to blessings_path
+		end
+	end
+
+	def solve
+		@blessing = Blessing.find(params[:id])
+		if params[:id] == params[:answer_id]
+			@blessing.update(solved: true)
+			# @correct = true # for front end ajax reaction
+			redirect_to @blessing
+		else
+			# @correct = false
+			redirect_to @blessing
+		end
+	end
+
+	def show
+		@blessing = Blessing.find(params[:id])
+		redirect_to unsolved_blessing_path(@blessing) unless @blessing.solved?
 	end
 
 	def permit_params
