@@ -1,5 +1,5 @@
 <h3><%= "請問，#{@blessing.question}？" %></h3>
 <% @random_blessings.each do |blessing| %>
   <%= image_tag blessing.photo %>
-  <%= blessing.nickname %>
+  <%= blessing.nickname %><br>
 <% end %>
