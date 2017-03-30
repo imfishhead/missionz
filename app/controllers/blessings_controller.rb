@@ -9,7 +9,7 @@ class BlessingsController < ApplicationController
 	def create
 		@blessing = Blessing.new(permit_params)
 		if @blessing.save
-			redirect_to add_question_blessing_path(@blessing)
+			redirect_to done_blessing_path(@blessing)
 		else
 			render 'new'
 		end
@@ -19,9 +19,9 @@ class BlessingsController < ApplicationController
 		@blessings = Blessing.solved
 	end
 
-	def add_question
-		@blessing = Blessing.find(params[:id])
-	end
+	# def add_question
+	# 	@blessing = Blessing.find(params[:id])
+	# end
 
 	def update
 		@blessing = Blessing.find(params[:id])

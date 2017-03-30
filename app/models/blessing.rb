@@ -5,5 +5,5 @@ class Blessing < ActiveRecord::Base
 
 	validates :nickname, presence: true
 	validates :content, presence: true
-	validates :question, presence: true, if: Proc.new { |b| b.persisted? }
+	validates :question, presence: true
 end

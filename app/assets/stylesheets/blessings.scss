@@ -11,7 +11,8 @@ body {
 .wrap {
   padding: 30px;
   background: #eee;
-  height: 100vh;
+  height: 100%;
+  overflow: hidden;
 }
 
 input:focus, textarea:focus {
