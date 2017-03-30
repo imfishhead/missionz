@@ -28,7 +28,8 @@ gem 'fog-aws'
 gem 'carrierwave', '~> 1.0'
 gem 'simple_form'
 gem 'bootstrap-sass', '~> 3.3.6'
-
+gem 'devise'
+gem 'activeadmin', github: 'activeadmin'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
