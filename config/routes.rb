@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     member do
       get 'add_question', to: 'blessings#add_question'
       get 'unsolved', to: 'blessings#unsolved'
+      get 'done', to: 'blessings#done'
       post 'solve', to: 'blessings#solve'
     end
   end

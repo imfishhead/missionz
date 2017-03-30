@@ -8,8 +8,11 @@ class BlessingsController < ApplicationController
 
 	def create
 		@blessing = Blessing.new(permit_params)
-		@blessing.save!
-		redirect_to add_question_blessing_path(@blessing)
+		if @blessing.save
+			redirect_to add_question_blessing_path(@blessing)
+		else
+			render 'new'
+		end
 	end
 
 	def index
@@ -22,8 +25,15 @@ class BlessingsController < ApplicationController
 
 	def update
 		@blessing = Blessing.find(params[:id])
-		@blessing.update!(permit_params)
-		redirect_to @blessing
+		if @blessing.update(permit_params)
+			redirect_to done_blessing_path(@blessing)
+		else
+			render 'add_question'
+		end
+	end
+
+	def done
+		@blessing = Blessing.find(params[:id])
 	end
 
 	def unsolved

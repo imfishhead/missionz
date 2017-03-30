@@ -11,7 +11,9 @@
   </div>
   <%= simple_form_for @blessing do |f| %>
     <div class="form-block">
-    	<h4>我的問題</h4><%= f.input_field :question %><br>
+    	<h4>我的問題</h4>
+      <%= f.error :question %>
+      <div class="question-wrap"><%= f.input_field :question %><span>？</span></div><br>
     </div>
     <div class="form-block">
     	<%= f.button :submit, "好的，送出！", class:"btn-submit" %>
