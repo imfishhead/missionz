@@ -46,6 +46,10 @@
 
 <script type="text/javascript">
   $(document).on('keyup', '#blessing_nickname', function() {
-    $("#you").text($(this).val());
+    if($(this).val() == '') {
+      $("#you").text('你');
+    } else {
+      $("#you").text($(this).val());
+    }
   });
 </script>
