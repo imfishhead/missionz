@@ -1,6 +1,26 @@
-<%= simple_form_for @blessing do |f| %>
-	請上傳一張您的照片<%= f.file_field :photo %><br>
-	您是？<%= f.input_field :nickname %><br>
-	請留下祝福<%= f.input_field :content %><br>
-	<%= f.button :submit %>
-<% end %>
+<div class="wrap">
+  <div class="content">
+  <div class="form-block">
+    <h3>
+      這是給志軒的話唷！志軒只待到明天了ＱＱ，大家請快寫兒<br>
+    </h3>
+  </div>
+  <%= simple_form_for @blessing do |f| %>
+    <div class="form-block">
+    	<h4>請上傳一張你的照片</h4>
+      <%= f.file_field :photo %><br>
+    </div>
+    <div class="form-block">
+      <h4>你的名字</h4>
+      <%= f.input_field :nickname %>
+    </div>
+    <div class="form-block">
+    	<h4>你想對志軒說的話？？！？！</h4>
+      <%= f.input_field :content %><br>
+    </div>
+    <div class="form-block">
+  	 <%= f.button :submit, "繼續填，還有下一頁", class:"btn-submit" %>
+    </div>
+  <% end %>
+  </div>
+</div>
