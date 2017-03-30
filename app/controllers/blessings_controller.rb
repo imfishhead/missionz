@@ -70,10 +70,10 @@ class BlessingsController < ApplicationController
 		end
 	end
 
-	def show
-		@blessing = Blessing.find(params[:id])
-		redirect_to unsolved_blessing_path(@blessing) unless @blessing.solved?
-	end
+	# def show
+	# 	@blessing = Blessing.find(params[:id])
+	# 	redirect_to unsolved_blessing_path(@blessing) unless @blessing.solved?
+	# end
 
 	def permit_params
 		params.require(:blessing).permit(:photo, :nickname, :content, :question)
