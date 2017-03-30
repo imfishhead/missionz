@@ -51,7 +51,7 @@
 </div>
 
 <script type="text/javascript">
-  $(document).on('keyup', '#blessing_nickname', function() {
+  $(document).on('keyup change', '#blessing_nickname', function() {
     if($(this).val() == '') {
       $("#you").text('你');
     } else {
