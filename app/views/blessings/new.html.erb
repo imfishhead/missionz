@@ -2,20 +2,20 @@
   <div class="content">
   <div class="form-block">
     <h3>
-      這是給志軒的話唷！志軒只待到明天了ＱＱ，大家請快寫兒<br>
+      這是給志軒的話唷！志軒只待到明天，大家請快寫兒<br>
     </h3>
   </div>
   <%= simple_form_for @blessing do |f| %>
     <div class="form-block">
-    	<h4>請上傳一張你的照片</h4>
+    	<h4 class="ques-title">請上傳一張你的照片</h4>
       <%= f.file_field :photo %><br>
     </div>
     <div class="form-block">
-      <h4>你的名字</h4>
+      <h4 class="ques-title">你的名字</h4>
       <%= f.input_field :nickname %>
     </div>
     <div class="form-block">
-    	<h4>你想對志軒說的話？？！？！</h4>
+    	<h4 class="ques-title">你想對志軒說的話？？！？！</h4>
       <%= f.input_field :content %><br>
     </div>
     <div class="form-block">

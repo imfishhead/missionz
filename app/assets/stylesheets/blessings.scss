@@ -9,7 +9,8 @@ body {
   font-size: 14px;
 }
 .wrap {
- padding: 30px 60px;
+  padding: 30px 60px;
+  background: #eee;
 }
 
 input:focus, textarea:focus {
@@ -49,14 +50,14 @@ textarea {
     color: #fff; 
   }
 }
-h4 {
+h4.ques-title{
   font-weight: 200;
   color: #555; 
   line-height: 1.5;
 }
 h3 {
   font-weight: 600;
-  font-size: 18px;
+  font-size: 17px;
 }
 b{
   color: #ff3172;
