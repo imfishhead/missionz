@@ -1,4 +1,6 @@
 class BlessingsController < ApplicationController
+	before_action :authenticate_admin_user!, only: :quiz
+
 	def quiz
 		@blessings = Blessing.all.shuffle
 	end
@@ -49,11 +51,6 @@ class BlessingsController < ApplicationController
 	def get_content
 		@blessing = Blessing.find(params[:id])
 	end
-
-	# def show
-	# 	@blessing = Blessing.find(params[:id])
-	# 	redirect_to unsolved_blessing_path(@blessing) unless @blessing.solved?
-	# end
 
 	def permit_params
 		params.require(:blessing).permit(:photo, :nickname, :content, :question)
