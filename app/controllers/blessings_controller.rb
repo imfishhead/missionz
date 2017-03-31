@@ -1,6 +1,6 @@
 class BlessingsController < ApplicationController
 	def quiz
-		@blessings = Blessing.all
+		@blessings = Blessing.all.shuffle
 	end
 
 	def index
