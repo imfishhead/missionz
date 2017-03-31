@@ -271,7 +271,7 @@ section {
     background-color: rgba(0,0,0,.4);
   }
   .content.show {
-    display: flex;
+    display: flex!important;
   }
   .content {
     position: relative;
@@ -300,6 +300,7 @@ section {
     max-width: 300px;
     min-height: 0;
     text-align: center;
+    display: block!important;
     div { 
       display: none; 
       b { color: $main; }
@@ -307,7 +308,7 @@ section {
     div.active { display: block }
   }
   #pop-question-form.show {
-    display: block;
+    display: block!important;
     max-width: 500px;
     appearance: auto;
     h3 {
@@ -331,6 +332,8 @@ section {
     }
     [type="submit"] {
       width: 120px;
+      padding: 0;
+      border: 0;
       height: 30px;
       line-height: 30px;
       border-radius: 50px;
