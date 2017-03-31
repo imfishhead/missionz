@@ -4,5 +4,6 @@ $('#pop-result').addClass('show');
 <% if @blessing.solved? %>
 	$('#blessing_<%= @blessing.id %>').html('<%= j render partial: "blessings/partials/card", locals: { blessing: @blessing } %>')
 	$('#blessing_<%= @blessing.id %>').addClass('you-are-right');
+	$('.pg-bar').html('<%= j render partial: "blessings/partials/pg_bar" %>')
 <% end %>
 $('body').css('overflow', 'hidden')

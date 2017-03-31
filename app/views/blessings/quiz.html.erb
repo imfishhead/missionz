@@ -1,10 +1,7 @@
   <div class="fixed-bg"></div>
   <header>
     <div class="pg-bar">
-      <h2>你已解完<b><%= Blessing.solved.count %></b>張票，還剩<b><%= Blessing.unsolved.count %></b>張！</h2>
-      <div class="pg-main">
-        <div class="pg-body" style="width: <%= "#{(Blessing.solved.count.to_f/Blessing.count.to_f)*100}%" %> "></div>
-      </div>
+      <%= render partial: 'blessings/partials/pg_bar' %>
     </div>
   </header>
   <section class="scanLines">

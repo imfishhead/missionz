@@ -1,23 +1,10 @@
 class BlessingsController < ApplicationController
 	def quiz
-		@blessings = Blessing.all.shuffle
-	end
-
-	def index
+		@blessings = Blessing.all.shuffle!
 	end
 
 	def new
 		@blessing = Blessing.new
-	end
-
-	def get_question
-		@blessing = Blessing.find(params[:id])
-		@random_blessings = Blessing.where
-																.not(id: params[:id])
-																.order("RANDOM()")
-																.take(3)
-		@random_blessings << @blessing
-		@random_blessings.shuffle
 	end
 
 	def create
@@ -29,13 +16,9 @@ class BlessingsController < ApplicationController
 		end
 	end
 
-	def index
-		@blessings = Blessing.solved
+	def done
+		@blessing = Blessing.find(params[:id])
 	end
-
-	# def add_question
-	# 	@blessing = Blessing.find(params[:id])
-	# end
 
 	def update
 		@blessing = Blessing.find(params[:id])
@@ -46,15 +29,21 @@ class BlessingsController < ApplicationController
 		end
 	end
 
-	def done
-		@blessing = Blessing.find(params[:id])
-	end
-
 	def solve
 		@blessing = Blessing.find(params[:id])
 		if params[:id] == params[:answer_id]
 			@blessing.update(solved: true)
 		end
+	end
+
+	def get_question
+		@blessing = Blessing.find(params[:id])
+		@random_blessings = Blessing.where
+																.not(id: params[:id])
+																.order("RANDOM()")
+																.take(3)
+		@random_blessings << @blessing
+		@random_blessings.shuffle!
 	end
 
 	def get_content

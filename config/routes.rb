@@ -12,7 +12,6 @@ Rails.application.routes.draw do
   get 'quiz', to: 'blessings#quiz', as: 'quiz'
   resources :blessings do
     member do
-      get 'add_question', to: 'blessings#add_question'
       get 'get_question', to: 'blessings#get_question'
       get 'get_content', to: 'blessings#get_content'
       get 'done', to: 'blessings#done'
