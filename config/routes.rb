@@ -6,13 +6,15 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'blessings#index'
+  root 'blessings#quiz'
 
-  get 'start_solve', to: 'blessings#start_solve', as: 'start_solve'
+
+  get 'quiz', to: 'blessings#quiz', as: 'quiz'
   resources :blessings do
     member do
       get 'add_question', to: 'blessings#add_question'
-      get 'unsolved', to: 'blessings#unsolved'
+      get 'get_question', to: 'blessings#get_question'
+      get 'get_content', to: 'blessings#get_content'
       get 'done', to: 'blessings#done'
       post 'solve', to: 'blessings#solve'
     end

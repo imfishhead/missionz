@@ -1,0 +1,10 @@
+<div class="pop-picture" style="background-image: url('<%= @blessing.photo.url.presence || asset_path('she-is-Hatsune.svg') %>')"></div>
+<div class="pop-text">
+  <div class="pop-name"><%= @blessing.nickname %></div>
+  <div class="pop-question">
+		<%= @blessing.question %>
+  </div>
+  <div class="pop-says">
+  	<%= @blessing.content %>
+  </div>
+</div>

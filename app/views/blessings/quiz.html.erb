@@ -1,0 +1,44 @@
+  <div class="fixed-bg"></div>
+  <header>
+    <div class="pg-bar">
+      <h2>你已解完<b>0</b>張票，還剩<b>13</b>張！</h2>
+      <div class="pg-main">
+        <div class="pg-body"></div>
+      </div>
+    </div>
+  </header>
+  <section class="scanLines">
+    <div class="people-will-miss-you flex-l4-m3-s2-xs1-jfs-">
+      <% @blessings.each do |blessing| %>
+      <div id="blessing_<%= blessing.id %>" class="can-you-guess-who-this-is <%= 'you-are-right' if blessing.solved? %>">
+        <div class="front">
+          <div class="picture" style="background-image: url('<%= blessing.solved? ? blessing.photo.url : asset_path('she-is-Hatsune.svg') %>');"></div>
+          <div class="question">
+            <%= blessing.question %>
+          </div>
+          <div class="who">
+            <div class="name"><%= blessing.solved? ? blessing.nickname : 'unknown' %></div>
+            <p class="says">
+              <%= blessing.solved? ? blessing.content : '嘿嘿想看嗎' %>
+            </p>
+          </div>
+          <%= link_to get_question_blessing_path(blessing), data: { solve: blessing.id }, class: "z-btn", remote: true do %>
+            <i class="fa fa-lock" aria-hidden="true"></i>
+            解這張票
+          <% end %>
+          <%= link_to '看更多', get_content_blessing_path(blessing), data: { seemore: blessing.id }, class: "z-btn", remote: true %>
+        </div>
+        <div class="back"></div>
+      </div>
+      <% end %>
+    </div>
+  </section>
+  <div id="pop">
+    <div class="close"></div>
+    <div id="pop-see-more" class="content">
+    </div>
+    <div id="pop-question-form" class="content">
+    </div>
+    <div id="pop-result" class="content">
+    </div>
+  </div>

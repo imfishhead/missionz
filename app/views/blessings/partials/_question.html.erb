@@ -1,0 +1,14 @@
+<%= form_tag solve_blessing_path, remote: true do %>
+	<h3>我的描述...</h3>
+	<div class="pop-question"><%= "請問，#{@blessing.question}？" %></div>
+	<h3>請問我是...</h3>
+	<% @random_blessings.each do |blessing| %>
+	  <%= label_tag "answer_id_#{blessing.id}" do %>
+		  <%= radio_button_tag 'answer_id', blessing.id %>
+		  <b></b>
+		  <span><%= blessing.nickname %></span>
+	  <% end %>
+	<% end %>
+
+  <%= submit_tag '我覺得是他' %>
+<% end %>

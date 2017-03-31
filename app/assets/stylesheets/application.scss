@@ -11,6 +11,8 @@
  * file per style scope.
  *
  *= require_self
+ *= require doppler
+ *= require font-awesome
  */
 
 @import "bootstrap-sprockets";

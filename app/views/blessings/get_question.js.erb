@@ -1,0 +1,5 @@
+$('#pop').show()
+$('#pop .content').removeClass('show')
+$('#pop-question-form').html('<%= j render "blessings/partials/question" %>');
+$('#pop-question-form').addClass('show');
+$('body').css('overflow', 'hidden')

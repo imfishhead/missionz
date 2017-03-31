@@ -1,0 +1,7 @@
+$('#pop .content').removeClass('show')
+$('#pop-result').html('<%= j render "blessings/partials/result" %>');
+$('#pop-result').addClass('show');
+<% if @blessing.solved? %>
+	$('#blessing_<%= @blessing.id %>').addClass('you-are-right');
+<% end %>
+$('body').css('overflow', 'hidden')

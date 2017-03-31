@@ -1,0 +1,5 @@
+$('#pop').show()
+$('#pop .content').removeClass('show')
+$('#pop-see-more').html('<%= j render "blessings/partials/content" %>');
+$('#pop-see-more').addClass('show');
+$('body').css('overflow', 'hidden')

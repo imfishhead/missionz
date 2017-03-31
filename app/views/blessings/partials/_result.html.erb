@@ -1,0 +1,12 @@
+<% if @blessing.solved? %>
+	<div class="a_a active">
+	  算你厲害，<br><b><%= @blessing.nickname %></b>
+	  已經解鎖，快去看看吧！<br>
+	  (如果是用猜的，不要告訴我)
+	</div>
+<% else %>
+	<div class="q_q active">
+	  痾 ... 我可能有點難認，<br>
+	  沒關係你先解別人 ... Q_Q
+	</div>
+<% end %>
