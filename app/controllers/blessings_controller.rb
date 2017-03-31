@@ -1,6 +1,6 @@
 class BlessingsController < ApplicationController
 	def quiz
-		@blessings = Blessing.all.shuffle!
+		@blessings = Blessing.all.shuffle
 	end
 
 	def new
