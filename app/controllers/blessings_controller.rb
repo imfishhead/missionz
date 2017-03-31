@@ -17,6 +17,7 @@ class BlessingsController < ApplicationController
 																.order("RANDOM()")
 																.take(3)
 		@random_blessings << @blessing
+		@random_blessings.shuffle
 	end
 
 	def create
